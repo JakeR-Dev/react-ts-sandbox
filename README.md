@@ -10,6 +10,8 @@ Built with:
 - Vite
 - Tailwind CSS
 
+Utilizes client-side localStorage for quick and easy data management. 
+
 ## Getting Started
 
 Run the development server:
