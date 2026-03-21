@@ -10,7 +10,7 @@ Built with:
 - Vite
 - Tailwind CSS
 
-Utilizes client-side localStorage for quick and easy data management. 
+Utilizes client-side localStorage for quick and easy data management.
 
 ## Getting Started
 
@@ -34,5 +34,5 @@ Build output:
 - `dist/`
 
 Notes:
-- The workflow sets `VITE_BASE_PATH` to `/<repo-name>/` for GitHub Pages.
+- The workflow sets `VITE_BASE_PATH` to `/react-ts-sandbox/` for GitHub Pages.
 - In GitHub repo settings, set Pages source to GitHub Actions.
