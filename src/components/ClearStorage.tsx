@@ -26,6 +26,8 @@ export const ClearStorage = ({ setBeenHere, setUsers }: ClearStorageProps) => {
     <button
       className="clear-storage absolute top-2 right-2 z-999 btn"
       role="button"
-      onClick={clearLocalStorage}>Clear Local storage</button>
+      onClick={clearLocalStorage}>
+      Clear Local storage
+    </button>
   )
 }

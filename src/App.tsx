@@ -64,7 +64,10 @@ function App() {
   return (
     <>
       {beenHere ? (
-        <ClearStorage setBeenHere={setBeenHere} setUsers={setUsers} />
+        <ClearStorage
+          setBeenHere={setBeenHere}
+          setUsers={setUsers}
+        />
       ) : (
         <ReloadWindow />
       )}
@@ -85,7 +88,10 @@ function App() {
             <p>No users found</p>
           )}
         </div>
-        <AddUser users={users} setUsers={setUsers} />
+        <AddUser
+          users={users}
+          setUsers={setUsers}
+        />
       </section>
     </>
   )
