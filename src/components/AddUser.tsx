@@ -8,7 +8,6 @@ type AddUserProps = {
 export const AddUser = ({ users, setUsers }: AddUserProps) => {
   const [showNewUserForm, setShowNewUserForm] = useState(false)
 
-  console.log('users:', users);
   return (
     <>
       <button

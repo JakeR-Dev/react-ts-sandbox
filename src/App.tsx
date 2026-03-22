@@ -16,15 +16,22 @@ function App() {
     }
     return defaultUsers
   }
+
+  // remove the user
+  const removeUser = (indexToRemove: number) => {
+    setUsers((prevUsers) => prevUsers.filter((_, index) => index !== indexToRemove))
+  }
+
   // set users state
   const [users, setUsers] = useState(() => {
     try {
       const parsedUsers = JSON.parse(storedUsers() as string)
-      return Array.isArray(parsedUsers) ? (parsedUsers as User[]) : defaultUsers
+      return Array.isArray(parsedUsers) && parsedUsers.length > 0 ? (parsedUsers as User[]) : defaultUsers
     } catch {
       return defaultUsers
     }
   })
+  
 
   // load the saved users on mount and set beenHere flag in localstorage
   useEffect(() => {
@@ -66,7 +73,13 @@ function App() {
         <div className="users grid w-full gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {users.length > 0 ? (
             users.map((user, index) => (
-              <UserCard key={index} name={user.name} role={user.role} verified={user.verified} />
+              <UserCard
+                key={user.name}
+                name={user.name}
+                role={user.role}
+                verified={user.verified}
+                onRemove={() => removeUser(index)}
+              />
             ))
           ) : (
             <p>No users found</p>
