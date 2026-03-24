@@ -1,6 +1,6 @@
 import type { Dispatch, SetStateAction, SubmitEvent } from 'react'
-import type { User } from '../data/users.ts'
 import { useState } from 'react'
+import type { User } from '../data/users.ts'
 
 type UpdateUserProps = {
   userName: string
