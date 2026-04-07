@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { PreTitle } from './components/PreTitle.tsx'
 import { Headline } from './components/Headline'
 import { UserCard } from './components/UserCard'
 import { ClearStorage } from './components/ClearStorage'
@@ -72,6 +73,7 @@ function App() {
         <ReloadWindow />
       )}
       <section className="floater mx-auto max-w-4xl p-4 box-border">
+        <PreTitle />
         <Headline beenHere={beenHere} />
         <div className="users grid w-full gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {users.length > 0 ? (
@@ -85,7 +87,7 @@ function App() {
               />
             ))
           ) : (
-            <p>No users found</p>
+            <p className="col-span-full text-center">No users found</p>
           )}
         </div>
         <AddUser

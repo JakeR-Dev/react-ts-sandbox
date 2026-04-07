@@ -9,13 +9,13 @@ export const AddUser = ({ users, setUsers }: AddUserProps) => {
   const [showNewUserForm, setShowNewUserForm] = useState(false)
 
   return (
-    <>
+    <div className="add-user-container mt-4 col-span-full text-center">
       <button
         className="add-user btn mt-4"
         type="button"
         onClick={() => setShowNewUserForm(!showNewUserForm)}
       >
-        {showNewUserForm ? 'Cancel' : 'Add User'}
+        {showNewUserForm ? 'Cancel' : 'Add User +'}
       </button>
 
       {showNewUserForm && (
@@ -55,11 +55,11 @@ export const AddUser = ({ users, setUsers }: AddUserProps) => {
           <label htmlFor="verification" className="text-gray-500">Verified:</label>
           <input type="checkbox" id="verified" name="verified" />
           {/* submit */}
-          <button type="submit" className="block mt-2 border rounded-sm border-white p-2 w-ful">
+          <button type="submit" className="block mt-2 border rounded-sm border-white p-2 w-full">
             Add User +
           </button>
         </form>
       )}
-    </>
+    </div>
   )
 }
