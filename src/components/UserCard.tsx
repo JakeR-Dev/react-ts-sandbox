@@ -14,7 +14,7 @@ export const UserCard = ({ name, role, verified, onRemove }: UserCardProps) => {
   const [displayVerified, setDisplayVerified] = useState(verified);
 
   return (
-    <div className="user-card h-full p-4 rounded-sm border-white border text-left min-w-[240px] relative">
+    <div className="user-card h-full p-4 rounded-sm border-white border text-left min-w-full relative">
       <RemoveUser onRemove={onRemove} />
       <h6 className="mb-2">{displayRole || 'Jabroni'}</h6>
       <h4 className="mb-2">{displayName} {displayVerified && <span>✓</span>}</h4>

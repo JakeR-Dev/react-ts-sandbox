@@ -6,10 +6,13 @@ import { ClearStorage } from './components/ClearStorage'
 import { ReloadWindow } from './components/ReloadWindow'
 import { AddUser } from './components/AddUser'
 import { users as defaultUsers, type User } from './data/users.ts'
+import { ColTweakers } from './components/ColTweakers.tsx'
 import './App.css'
 
 function App() {
-  const [beenHere, setBeenHere] = useState(localStorage.getItem('beenHere') === 'true')
+  const [beenHere, setBeenHere] = useState(localStorage.getItem('beenHere') === 'true');
+  const [desktopCols, setDesktopCols] = useState(3);
+
   // get stored users from local storage or default to users from users.ts
   const storedUsers = () => {
     if (localStorage.getItem('users')) {
@@ -75,7 +78,7 @@ function App() {
       <section className="floater mx-auto max-w-4xl p-4 box-border">
         <PreTitle />
         <Headline beenHere={beenHere} />
-        <div className="users grid w-full gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        <div className={`users grid w-full gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-${desktopCols}`}>
           {users.length > 0 ? (
             users.map((user, index) => (
               <UserCard
@@ -93,6 +96,10 @@ function App() {
         <AddUser
           users={users}
           setUsers={setUsers}
+        />
+        <ColTweakers
+          setDesktopCols={setDesktopCols}
+          desktopCols={desktopCols}
         />
       </section>
     </>
