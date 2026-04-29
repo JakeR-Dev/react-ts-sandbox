@@ -58,6 +58,11 @@ function App() {
         setUsers(users)
       }
     }
+    // get stored value of 'sandboxCols' from localstorage
+    if (localStorage.getItem('sandboxCols')) {
+      const savedCols = localStorage.getItem('sandboxCols');
+      setDesktopCols(Number(savedCols))
+    }
   }, [])
 
   // whenever users is updated, save the new users array to localstorage
@@ -78,6 +83,10 @@ function App() {
       <section className="floater mx-auto max-w-4xl p-4 box-border">
         <PreTitle />
         <Headline beenHere={beenHere} />
+        <ColTweakers
+          setDesktopCols={setDesktopCols}
+          desktopCols={desktopCols}
+        />
         <div className={`users grid w-full gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-${desktopCols}`}>
           {users.length > 0 ? (
             users.map((user, index) => (
@@ -96,10 +105,6 @@ function App() {
         <AddUser
           users={users}
           setUsers={setUsers}
-        />
-        <ColTweakers
-          setDesktopCols={setDesktopCols}
-          desktopCols={desktopCols}
         />
       </section>
     </>

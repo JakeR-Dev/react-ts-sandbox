@@ -17,7 +17,7 @@ export const Headline = ({ beenHere }: { beenHere: boolean }) => {
     <>
       {showHeadline ? (
         <h1
-          className="mb-8 text-center"
+          className="mb-4 text-center"
           onClick={updateHeadline}>
           {headline}
         </h1>
@@ -25,7 +25,7 @@ export const Headline = ({ beenHere }: { beenHere: boolean }) => {
         <input
           type="text"
           defaultValue={headline}
-          className="block w-full border border-white mb-8 rounded-sm p-4"
+          className="block w-full border border-white mb-6 rounded-sm p-4"
           onBlur={headlineFieldExit}
           autoFocus
         />
